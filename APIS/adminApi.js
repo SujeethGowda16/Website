@@ -92,40 +92,7 @@ adminApiObj.get("/oneproduct/:productname",asyncHandler(async(req,res,next)=>{
 
 
 
-adminApiObj.post("/save",asyncHandler(async(req,res,next)=>{
 
-    productCollectionObj = req.app.get("productCollectionObj");
-
-    productObj = req.body;
-
-    await productCollectionObj.insertOne(productObj);
-    res.send({message:"success"});
-}))
-
-
-
-//edit product details
-adminApiObj.post("/editproduct",asyncHandler(async(req,res,next)=>{
-
-    let productCollectionObj = req.app.get("productCollectionObj");
-    let productObj =  req.body;
-    
-    
-    let product = await productCollectionObj.findOne({productname:productObj.productname});
-
-    if(product!==null){
-        await productCollectionObj.update({productname:productObj.productname},{$set:{
-            brand:productObj.brand,
-            colour:productObj.colour,
-            category:productObj.category,
-            productID:productObj.productID,
-            cost:productObj.cost,
-            description:productObj.description
-        }})
-        res.send({message:"updated"});
-    }
-
-}))
 
 //delete from all products
 adminApiObj.post("/delete",asyncHandler(async(req,res,next)=>{

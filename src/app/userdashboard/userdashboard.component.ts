@@ -34,49 +34,7 @@ export class UserdashboardComponent implements OnInit {
     )
   }
  
-  viewitem(n:number){
-    
-    let viewObj=this.products[n];
-    console.log(viewObj);
-    this.as.viewItem(viewObj).subscribe(
-      res=>{
-        if(res["message"]){
-      
-          localStorage.setItem("productname",res["productname"])
-          this.router.navigateByUrl("/viewproduct");
-        }
-      },
-      err=>{
-        alert("Something went wrong in getting details")
-        console.log(err)
 
-      }
-    )
-  }
-
-  additem(n:number){
-    if(this.username!==null){
-      let obj={
-      username:this.username,
-      productname:this.products[n].productname,
-      productID:this.products[n].productID,
-      colour:this.products[n].colour,
-      brand:this.products[n].brand,
-      category:this.products[n].category,
-      cost:this.products[n].cost,
-      description:this.products[n].description,
-      productImgLink:this.products[n].productImgLink
-      }
- 
-    }
-    else{
-      this.router.navigateByUrl("/login")
-    }
-  }
-
-
- 
-  
   logout(){
     this.router.navigateByUrl("/login")
   }

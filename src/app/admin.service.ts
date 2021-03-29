@@ -20,20 +20,10 @@ export class AdminService {
       getProducts():Observable<any>{
         return this.hc.get("/admin/allproducts");
       }
-      editProduct(productObj):Observable<any>{
-        return this.hc.post("/admin/editproduct",productObj)
-      }
-      saveProduct(productObj):Observable<any>
-      {
-        return this.hc.post("/admin/save",productObj);
-      }
+     
       deleteProduct(obj):Observable<any>{
       
         return this.hc.post("/admin/delete",obj);
-      }
-      
-      viewItem(Obj):Observable<any>{
-        return this.hc.post("/admin/viewitem",Obj)
       }
       getItem(obj):Observable<any>{
       
