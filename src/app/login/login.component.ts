@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem("username",res["username"])
 
             //navigate to user component
-            this.router.navigateByUrl("/userdashboard")
+            this.router.navigateByUrl("/home")
           }
           else{
             alert(res["message"])
