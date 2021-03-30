@@ -9,7 +9,7 @@ import { AdminService } from '../admin.service';
 })
 export class HomeComponent implements OnInit {
 
-  
+ 
   username;
   products=[];
   
@@ -36,6 +36,8 @@ export class HomeComponent implements OnInit {
  
 
   logout(){
-    this.router.navigateByUrl("/login")
+    localStorage.clear();
+    this.router.navigateByUrl("/home")
+    window.location.reload();
   }
 }

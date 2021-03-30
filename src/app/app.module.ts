@@ -7,9 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
-import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { HomeComponent } from './home/home.component';
+
 
 
 @NgModule({
@@ -17,9 +17,9 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    UserdashboardComponent,
     ResetpasswordComponent,
-    HomeComponent
+    HomeComponent,
+  
    
   ],
   imports: [
